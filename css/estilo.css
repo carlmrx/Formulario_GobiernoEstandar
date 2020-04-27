@@ -1,0 +1,11 @@
+body {
+    margin-top: 5%;
+    background-image: url(../recursos/img/Rainbow-Vortex.svg);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
