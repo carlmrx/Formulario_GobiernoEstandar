@@ -4,8 +4,14 @@ body {
 }
 
 footer {
-    position: fixed;
+    margin-top: 5%;
+    position: static;
     left: 0;
     bottom: 0;
     width: 100%;
+}
+
+.jumbotron {
+    background-color: white;
+    border: 1px solid black;
 }

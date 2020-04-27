@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class=row>
+            <div class="col-xs-12">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <form action="">
+                            <h3>Formulario de ayuda (SINATEC)</h3>
+                            <div class="col-md-4">
+                                <label for="">Nombre*</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="">Apellido*</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="">Curp*</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="">R.F.C (EMPRESA)*</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="">Folio (SINATEC)</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <div class="checkbox">
+                                    <label style="margin-top: 26px;">
+                                    <input type="checkbox" name="radio-01" value="opcion-01" > Pertenece a estacion de sevicio
+                                  </label>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="col-md-4">
+                                <label for="">Correo*</label>
+                                <input type="email" class="form-control">
+                                <label for="">Telefono*</label>
+                                <input type="text" class="form-control">
+
+                            </div>
+                            <div class="col-md-8 ">
+                                <label for="">Escriba una breve descripcion de su problema</label>
+                                <textarea class="form-control" placeholder="Área de texto" rows="4"></textarea>
+                            </div>
+                            <div class="col-md-8" style="margin-top: 3%;">
+                                <label>Adjuntar archivo (PDF,XML,Img,etc..)  </label>
+                                <!--<input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple>-->
+                                <button class="btn btn-primary btn-sm" type="button" style="margin-left: 6px; width: 92px;"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span></button>
+                            </div>
+                            <div class="col-md-4" style="float: right;margin-top: 2%;inline-size: auto;">
+                                <button class="btn btn-default  active" type="button">Cancelar</button>
+                                <button class="btn btn-primary  active" type="button">Enviar</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+
+</html>
