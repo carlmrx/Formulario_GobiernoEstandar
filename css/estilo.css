@@ -15,3 +15,7 @@ footer {
     background-color: white;
     border: 1px solid black;
 }
+
+label {
+    margin-top: 5px;
+}

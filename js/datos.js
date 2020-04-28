@@ -1,5 +1,19 @@
 $(document).ready(function() {
+    var estacion = "no";
+    var checkbox = document.getElementById('test');
+    checkbox.addEventListener("change", validaCheckbox, false);
+    var estacion;
+
+    function validaCheckbox() {
+        var checked = checkbox.checked;
+        if (checked) {
+
+            alert('Se leccionaste que perteneses a las estaciones de servicio etc........');
+            estacion = "si";
+        }
+    }
     $('#ok').click(function() {
+
 
         if ($('#nombre').val() == "") {
             alert("Debes agregar un nombre");
@@ -23,6 +37,25 @@ $(document).ready(function() {
             alert("Por favor da mas detalles de el problema para ayudarle");
             return false;
         }
-        alert('todo en orden');
+        cadena = "nombre=" + $('#nombre').val() +
+            "&apellido=" + $('#apellido').val() +
+            "&curp=" + $('#curp').val() +
+            "&rfc=" + $('#rfc').val() +
+            "&folio=" + $('#folio').val() +
+            "&estacion=" + estacion +
+            "&correo=" + $('#correo').val() +
+            "&telefono=" + $('#telefono').val() +
+            "&texto=" + $('#texto').val();
+        alert(cadena);
+
+        $.ajax({
+            type: "POST",
+            url: "php/registro.php",
+            data: cadena,
+            success: function(r) {
+
+            }
+        });
+
     });
 });
