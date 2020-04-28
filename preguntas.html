@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/jquery-3.5.0.js"></script>
+    <script src="js/datos.js"></script>
+
+
     <title>Formulario</title>
 </head>
 
@@ -19,28 +23,28 @@
                             <h3>Formulario de ayuda (SINATEC)</h3>
                             <div class="col-md-4">
                                 <label for="">Nombre*</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="nombre" required>
                             </div>
                             <div class="col-md-4 ">
                                 <label for="">Apellido*</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="apellido" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="">Curp*</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="curp" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="">R.F.C (EMPRESA)*</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="rfc" required>
                             </div>
                             <div class="col-md-4 ">
                                 <label for="">Folio (SINATEC)</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="folio">
                             </div>
                             <div class="col-md-4">
                                 <div class="checkbox">
-                                    <label style="margin-top: 26px;">
-                                    <input type="checkbox" name="radio-01" value="opcion-01" > Pertenece a estacion de sevicio
+                                    <label style="margin-top: 20px;">
+                                    <input type="checkbox" value="si" id="estacion" > Pertenece a estacion de sevicio
                                   </label>
                                 </div>
                             </div>
@@ -48,14 +52,14 @@
 
                             <div class="col-md-4">
                                 <label for="">Correo*</label>
-                                <input type="email" class="form-control">
+                                <input type="email" class="form-control" id="correo" required>
                                 <label for="">Telefono*</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="telefono" required>
 
                             </div>
                             <div class="col-md-8 ">
                                 <label for="">Escriba una breve descripcion de su problema</label>
-                                <textarea class="form-control" placeholder="Área de texto" rows="4"></textarea>
+                                <textarea class="form-control" placeholder="Área de texto" rows="4" id="texto" required></textarea>
                             </div>
                             <div class="col-md-8" style="margin-top: 3%;">
                                 <label>Adjuntar archivo (PDF,XML,Img,etc..)  </label>
@@ -63,8 +67,8 @@
                                 <button class="btn btn-primary btn-sm" type="button" style="margin-left: 6px; width: 92px;"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span></button>
                             </div>
                             <div class="col-md-4" style="float: right;margin-top: 2%;inline-size: auto;">
-                                <button class="btn btn-default  active" type="button">Cancelar</button>
-                                <button class="btn btn-primary  active" type="button">Enviar</button>
+                                <button class="btn btn-default  active" type="button" id="reset">Cancelar</button>
+                                <button class="btn btn-primary  active" type="submit" id="ok">Enviar</button>
                             </div>
                         </form>
 
@@ -75,5 +79,6 @@
     </div>
 </body>
 <script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+
 
 </html>
