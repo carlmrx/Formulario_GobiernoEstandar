@@ -23,7 +23,7 @@ CREATE TABLE `reporte` (
   `curp` varchar(18) collate latin1_general_ci default NULL,
   `rfc` varchar(20) collate latin1_general_ci default NULL,
   `folio` varchar(20) collate latin1_general_ci default NULL,
-  `estacion_servicio` char(2) collate latin1_general_ci default 'no',
+  `estacion_servicio` char(4) collate latin1_general_ci default 'no',
   `correo` varchar(30) collate latin1_general_ci default NULL,
   `telefono` bigint(20) default NULL,
   `texto` text collate latin1_general_ci,

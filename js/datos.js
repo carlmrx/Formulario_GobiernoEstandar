@@ -46,16 +46,23 @@ $(document).ready(function() {
             "&correo=" + $('#correo').val() +
             "&telefono=" + $('#telefono').val() +
             "&texto=" + $('#texto').val();
-        alert(cadena);
+
 
         $.ajax({
             type: "POST",
             url: "php/registro.php",
             data: cadena,
             success: function(r) {
+                if (r == 1) {
+                    // $('#formulario')[0].reset();
+                    window.location = "tiket.html";
 
+                } else {
+                    alert("error al agregar");
+
+                }
             }
-        });
+        })
 
-    });
+    })
 });

@@ -1,9 +1,6 @@
 <?php
- $conexion=mysqli_connect("localhost","root","","preguntas");
-if($conexion){
-    echo "conectado";
-}
-else{
-    echo "no conectado";
-}
+  function conexion()
+ {
+     return$conexion=mysqli_connect("localhost","root","","preguntas");
+ }
 ?>
