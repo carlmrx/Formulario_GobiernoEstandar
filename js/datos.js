@@ -47,22 +47,19 @@ $(document).ready(function() {
             "&telefono=" + $('#telefono').val() +
             "&texto=" + $('#texto').val();
 
-
         $.ajax({
             type: "POST",
             url: "php/registro.php",
             data: cadena,
             success: function(r) {
                 if (r == 1) {
-                    // $('#formulario')[0].reset();
-                    window.location = "tiket.html";
-
+                    $('#frmRegistro')[0].reset();
+                    alertify("Agregado con exito");
                 } else {
-                    alert("error al agregar");
-
+                    alertify("Fallo al agregar");
                 }
             }
-        })
+        });
 
     })
 });
