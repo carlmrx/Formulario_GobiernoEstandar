@@ -3,6 +3,8 @@
 
 <head>
     <title>Registro</title>
+    <link rel="stylesheet" href="css/estilo.css">
+
     <script src="js/jquery-3.5.0.js"></script>
     <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
 </head>
@@ -12,7 +14,7 @@
         <div class=row>
             <div class="col-xs-12">
 
-                <!-- Modal -->
+                <!-- Modal mensaje de regresar -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="alert alert-warning">
@@ -21,74 +23,74 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">no</button>
-                                <a class="btn btn-primary" href="index.html" role="button">si</a>
+                                <a class="btn btn-primary" href="index.html" id="reset" role="button">si</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="jumbotron jumbotron-fluid" style="background-color: white;border: 1px solid black;">
-                <div class="container">
-                    <form id="frmRegistro" autocomplete="off">
-                        <h3>Formulario de ayuda (SINATEC)</h3>
-                        <div class="col-md-4">
-                            <label for="">Nombre*</label>
-                            <input type="text" class="form-control" id="nombre" required>
-                        </div>
-                        <div class="col-md-4 ">
-                            <label for="">Apellido*</label>
-                            <input type="text" class="form-control" id="apellido" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="">Curp*</label>
-                            <input type="text" class="form-control" id="curp" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="">R.F.C (EMPRESA)*</label>
-                            <input type="text" class="form-control" id="rfc" required>
-                        </div>
-                        <div class="col-md-4 ">
-                            <label for="">Folio (SINATEC)</label>
-                            <input type="text" class="form-control" id="folio">
-                        </div>
-                        <div class="col-md-4">
-                            <label>Pertenece a una estacion de servicio?</label>
-                            <label style="margin-bottom: 5%;">
+
+                <div class="jumbotron jumbotron-fluid" style="background-color: white;border: 1px solid black;">
+                    <div class="container">
+                        <form id="frmRegistro" autocomplete="off">
+                            <h3>Formulario de ayuda (SINATEC)</h3>
+                            <div class="col-md-4">
+                                <label for="">Nombre*</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="">Apellido*</label>
+                                <input type="text" class="form-control" id="apellido" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="">Curp*</label>
+                                <input type="text" class="form-control" id="curp" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="">R.F.C (EMPRESA)*</label>
+                                <input type="text" class="form-control" id="rfc" required>
+                            </div>
+                            <div class="col-md-4 ">
+                                <label for="">Folio (SINATEC)</label>
+                                <input type="text" class="form-control" id="folio">
+                            </div>
+                            <div class="col-md-4">
+                                <label>Pertenece a una estacion de servicio?</label>
+                                <label style="margin-bottom: 5%;">
                                     <input type="checkbox" name="test" id="test">
                                     si
                                   </label>
 
-                        </div>
+                            </div>
 
-                        <hr>
+                            <hr>
 
-                        <div class="col-md-4">
-                            <label for="">Correo*</label>
-                            <input type="email" class="form-control" id="correo" required>
-                            <label for="">Telefono*</label>
-                            <input type="text" class="form-control" id="telefono" required>
+                            <div class="col-md-4">
+                                <label for="">Correo*</label>
+                                <input type="email" class="form-control" id="correo" required>
+                                <label for="">Telefono*</label>
+                                <input type="text" class="form-control" id="telefono" required>
 
-                        </div>
-                        <div class="col-md-8 ">
-                            <label for="">Escriba una breve descripcion de su problema</label>
-                            <textarea class="form-control" placeholder="Texto..." rows="4" id="texto" required></textarea>
-                        </div>
-                        <div class="col-md-8" style="margin-top: 3%;">
-                            <label>Adjuntar archivo (PDF,XML,Img,etc..)  </label>
-                            <!--<input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple>-->
-                            <button class="btn btn-primary btn-sm" type="button" style="margin-left: 6px; width: 92px;"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span></button>
-                        </div>
-                        <div class="col-md-4" style="float: right;margin-top: 2%;inline-size: auto;">
-                            <span class="btn btn-default" id="reset" data-toggle="modal" data-target="#exampleModal">cancelar</span>
-                            <span class="btn btn-primary" id="registrarNuevo">Registrar</span>
-                        </div>
-                    </form>
+                            </div>
+                            <div class="col-md-8 ">
+                                <label for="">Escriba una breve descripcion de su problema</label>
+                                <textarea class="form-control" placeholder="Texto..." rows="4" id="texto" required></textarea>
+                            </div>
+                            <div class="col-md-8" style="margin-top: 3%;">
+                                <label>Adjuntar archivo (PDF,XML,Img,etc..)  </label>
+                                <!--<input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple>-->
+                                <button class="btn btn-primary btn-sm" type="button" style="margin-left: 6px; width: 92px;"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span></button>
+                            </div>
+                            <div class="col-md-4" style="float: right;margin-top: 2%;inline-size: auto;">
+                                <span class="btn btn-default" data-toggle="modal" data-target="#exampleModal">cancelar</span>
+                                <span class="btn btn-primary" id="registrarNuevo">Registrar</span>
+                            </div>
+                        </form>
 
+                    </div>
                 </div>
             </div>
+
         </div>
-        <div class="col-sm-4"></div>
-    </div>
     </div>
 </body>
 
