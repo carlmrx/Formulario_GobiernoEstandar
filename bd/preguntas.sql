@@ -1,7 +1,8 @@
 create database preguntas;
 use preguntas;
 create table reporte(
-    id int auto_increment,
+    id int(15) auto_increment,
+    folio_reporte int( 11 ),
     nombre varchar(60),
     apellido varchar(60),
     curp varchar(18),
