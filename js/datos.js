@@ -12,20 +12,23 @@ $(document).ready(function() {
             estacion = "si";
         }
     }
-    $('#ok').click(function() {
+    $('#reset').click(function() {
+        $('#frmRegistro')[0].reset();
+    })
 
+    $('#registrarNuevo').click(function() {
 
         if ($('#nombre').val() == "") {
-            alert("Debes agregar un nombre");
+            alert("Debes agregar el nombre");
             return false;
         } else if ($('#apellido').val() == "") {
-            alert("Debes agregar un apellido");
+            alert("Debes agregar el apellido");
             return false;
         } else if ($('#curp').val() == "") {
-            alert("Debes agregar un curp");
+            alert("Debes agregar el curp");
             return false;
         } else if ($('#rfc').val() == "") {
-            alert("Debes agregar un rfc");
+            alert("Debes agregar el rfc");
             return false;
         } else if ($('#correo').val() == "") {
             alert("Debes agregar un coreo de contacto");
@@ -37,6 +40,7 @@ $(document).ready(function() {
             alert("Por favor da mas detalles de el problema para ayudarle");
             return false;
         }
+
         cadena = "nombre=" + $('#nombre').val() +
             "&apellido=" + $('#apellido').val() +
             "&curp=" + $('#curp').val() +
@@ -54,12 +58,11 @@ $(document).ready(function() {
             success: function(r) {
                 if (r == 1) {
                     $('#frmRegistro')[0].reset();
-                    alertify("Agregado con exito");
+                    window.location = "tiket.html";
                 } else {
-                    alertify("Fallo al agregar");
+                    alert("Fallo al agregar");
                 }
             }
         });
-
-    })
+    });
 });

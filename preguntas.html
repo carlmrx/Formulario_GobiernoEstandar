@@ -4,8 +4,8 @@
 <head>
     <title>Registro</title>
     <link rel="stylesheet" href="css/estilo.css">
-
     <script src="js/jquery-3.5.0.js"></script>
+    <script src="js/datos.js"></script>
     <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
 </head>
 
@@ -35,23 +35,23 @@
                             <h3>Formulario de ayuda (SINATEC)</h3>
                             <div class="col-md-4">
                                 <label for="">Nombre*</label>
-                                <input type="text" class="form-control" id="nombre" required>
+                                <input type="text" class="form-control" placeholder="Titular" id="nombre" required>
                             </div>
                             <div class="col-md-4 ">
                                 <label for="">Apellidos*</label>
-                                <input type="text" class="form-control" id="apellido" required>
+                                <input type="text" class="form-control" placeholder="Titular" id="apellido" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="">Curp*</label>
-                                <input type="text" class="form-control" id="curp" required>
+                                <input type="text" maxlength="18" placeholder="Representante legal" class="form-control" style="text-transform: uppercase;" id="curp" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="">R.F.C (EMPRESA)*</label>
-                                <input type="text" class="form-control" id="rfc" required>
+                                <label for="">R.F.C *</label>
+                                <input type="text" maxlength="18" placeholder="Empresa" class="form-control" style="text-transform: uppercase" id="rfc" required>
                             </div>
                             <div class="col-md-4 ">
                                 <label for="">Folio (SINATEC)</label>
-                                <input type="text" class="form-control" id="folio">
+                                <input type="text" placeholder="En caso de tener uno" class="form-control" id="folio">
                             </div>
                             <div class="col-md-4">
                                 <label>Pertenece a una estacion de servicio?</label>
@@ -66,9 +66,9 @@
 
                             <div class="col-md-4">
                                 <label for="">Correo*</label>
-                                <input type="email" class="form-control" id="correo" required>
+                                <input type="email" class="form-control" placeholder="Correo de contacto" id="correo" required>
                                 <label for="">Telefono*</label>
-                                <input type="text" class="form-control" id="telefono" required>
+                                <input type="text" placeholder="Telefono de contacto" class="form-control" id="telefono" required>
 
                             </div>
                             <div class="col-md-8 ">
@@ -93,77 +93,6 @@
         </div>
     </div>
 </body>
-
-</html>
 <script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        var estacion = "no";
-        var checkbox = document.getElementById('test');
-        checkbox.addEventListener("change", validaCheckbox, false);
-        var estacion;
-
-        function validaCheckbox() {
-            var checked = checkbox.checked;
-            if (checked) {
-
-                alert('Se leccionaste que perteneses a las estaciones de servicio etc........');
-                estacion = "si";
-            }
-        }
-        $('#reset').click(function() {
-            $('#frmRegistro')[0].reset();
-        })
-
-        $('#registrarNuevo').click(function() {
-
-            if ($('#nombre').val() == "") {
-                alert("Debes agregar el nombre");
-                return false;
-            } else if ($('#apellido').val() == "") {
-                alert("Debes agregar el apellido");
-                return false;
-            } else if ($('#curp').val() == "") {
-                alert("Debes agregar el curp");
-                return false;
-            } else if ($('#rfc').val() == "") {
-                alert("Debes agregar el rfc");
-                return false;
-            } else if ($('#correo').val() == "") {
-                alert("Debes agregar un coreo de contacto");
-                return false;
-            } else if ($('#telefono').val() == "") {
-                alert("Debes agregar un telefono de contacto");
-                return false;
-            } else if ($('#texto').val() == "") {
-                alert("Por favor da mas detalles de el problema para ayudarle");
-                return false;
-            }
-
-            cadena = "nombre=" + $('#nombre').val() +
-                "&apellido=" + $('#apellido').val() +
-                "&curp=" + $('#curp').val() +
-                "&rfc=" + $('#rfc').val() +
-                "&folio=" + $('#folio').val() +
-                "&estacion=" + estacion +
-                "&correo=" + $('#correo').val() +
-                "&telefono=" + $('#telefono').val() +
-                "&texto=" + $('#texto').val();
-
-            $.ajax({
-                type: "POST",
-                url: "php/registro.php",
-                data: cadena,
-                success: function(r) {
-                    if (r == 1) {
-                        $('#frmRegistro')[0].reset();
-                        window.location = "tiket.html";
-                    } else {
-                        alert("Fallo al agregar");
-                    }
-                }
-            });
-        });
-    });
-</script>
+</html>
